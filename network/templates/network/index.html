@@ -1,5 +1,12 @@
 {% extends "network/layout.html" %}
+{% load static %}
 
 {% block body %}
-    TODO
+
+    <input id="btn_arrow_right" class="input_btn" type="button" alt="arrowright" value="TESTE" onclick="save_game()">
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
 {% endblock %}
