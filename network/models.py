@@ -10,7 +10,10 @@ class Post(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="user_post")
     description = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True, null=False)
-    likes = models.ManyToManyField('User')
+    likes = models.ManyToManyField('User', blank=True)
+
+    def __str__(self):
+        return f"{self.id} | {self.user.first_name} {self.user.last_name} -> {self.description}"
 
 
 class Follow(models.Model):

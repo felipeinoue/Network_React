@@ -8,7 +8,7 @@ function save_game() {
     const csrftoken = getCookie('csrftoken');
   
     // fetch url
-    fetch(`/api_follow/1`, {
+    fetch(`/api_like/1`, {
         method: 'POST',
         mode: 'same-origin',  // Do not send CSRF token to another domain.
         headers: {
@@ -16,7 +16,7 @@ function save_game() {
         },
         body: JSON.stringify({
             score: "a",
-            level_id: "b"
+            description: ""
         })
     })
     .then(response => response.json())
